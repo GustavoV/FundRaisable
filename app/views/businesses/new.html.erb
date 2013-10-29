@@ -1,0 +1,38 @@
+<%= form_for @business do |bus| %>
+<p>
+	<%= bus.label :name, "Name:" %>
+	<%= bus.text_field :name %>
+
+</p>
+
+<p>
+	<%= bus.label :type_of_business, "Type of Business:" %>
+	<%= bus.text_field :type_of_business %>
+
+</p>
+
+<p>
+	<%= bus.label :email, "Email:" %>
+	<%= bus.text_field :email %>
+
+</p>
+
+<p>
+	<%= bus.label :business_address, "Business Address:" %>
+	<%= bus.text_field :business_address %>
+
+</p>
+
+<p>
+<%= bus.submit %>
+</p>
+
+<%end%>
+
+
+
+
+
+
+
+

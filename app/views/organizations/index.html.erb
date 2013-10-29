@@ -1,0 +1,23 @@
+<h1>List of participating organizations.</h1>
+
+<table class="orgs_table">
+  <tr>
+    <th>Name</th>
+    <th>Type of Organization</th>
+    <th>email</th>
+    <th>Phone Number</th>
+    <th>Delete?</th>
+  </tr>
+  
+  <% @organizations.each do |org| %>
+    <tr>
+      <td><%= org.name %></td>
+      <td><%= org.organization_type %></td>
+      <td><%= org.organization_email%></td>
+      <td><%= org.organization_phone_number %></td>
+      <td><%= button_to "X", {action:"destroy", id: org.id},
+       {method: :delete, data:{confirm:"Are you sure?"}}
+        %></td>
+    </tr>
+  <% end %>
+</table>

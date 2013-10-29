@@ -1,9 +1,29 @@
 Fundraisable::Application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
+  root 'welcome#index'
+  get 'businesses' => 'businesses#index'
+  get 'businesses/new' => 'businesses#new'
+  get 'businesses/:id' => 'businesses#show'
+  post 'businesses' => 'businesses#create'
+  delete 'businesses/:id' => 'businesses#destroy'
+
+  
+  get 'organizations' => 'organizations#index'
+  get 'organizations/new' => 'organizations#new'
+  get 'organizations/:id' => 'organizations#show'
+  post 'organizations' => 'organizations#create'
+  delete 'organizations/:id' => 'organizations#destroy'
+
+
+end
+
+#'businesses/new' => 'businesses#new'
+# delete 'languages/:id' => 'languages#destroy'
+
+# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -53,4 +73,3 @@ Fundraisable::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

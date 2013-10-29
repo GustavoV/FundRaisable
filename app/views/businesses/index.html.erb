@@ -1,0 +1,23 @@
+<h1>List of participating businesses.</h1>
+
+<table class="bussinesses_table">
+  <tr>
+    <th>Name</th>
+    <th>Type of Business</th>
+    <th>email</th>
+    <th>Business Address</th>
+    <th>Delete?</th>
+  </tr>
+  
+  <% @businesses.each do |bus| %>
+    <tr>
+      <td><%= bus.name %></td>
+      <td><%= bus.type_of_business %></td>
+      <td><%= bus.email %></td>
+      <td><%= bus.business_address %></td>
+      <td><%= button_to "X", {action:"destroy", id: bus.id},
+       {method: :delete, data:{confirm:"Are you sure?"}}
+        %></td>
+    </tr>
+  <% end %>
+</table>
